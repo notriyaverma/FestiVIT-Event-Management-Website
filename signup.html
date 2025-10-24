@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up - festiVIT</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link href="style.css" rel="stylesheet"/>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Comic+Neue:wght@700&display=swap');
+
+    body {
+      background-color: #3f1a6f; /* Dark background */
+    }
+    .hidden-form {
+      display: none;
+    }
+
+  </style>
+</head>
+<body class="bg-[#3f1a6f] flex flex-col items-center justify-center min-h-screen text-white">
+
+  <!-- Container -->
+  <div class="text-center space-y-8">
+    <!-- Heading -->
+    <h1 class="text-4xl sm:text-6xl font-bold fredoka text-xl text-[#00000] mb-2">Sign Up</h1>
+    
+    <!-- Login Text -->
+    <p class="text-gray-200 text-sm sm:text-base">
+      Already have an account? 
+      <a href="login.html" class="text-pink-400 hover:underline">Login</a>
+    </p>
+
+    <!-- Buttons -->
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <button onclick="openForm('participant')" 
+         class="px-8 py-4 bg-yellow-400 rounded-full text-lg font-semibold text-[#3f1a6f] hover:bg-yellow-300 transition">
+        Participant
+    </button>
+      <button onclick="openForm('organizer')" 
+         class="px-8 py-4 bg-yellow-400 rounded-full text-lg font-semibold text-[#3f1a6f] hover:bg-yellow-300 transition">
+        Organizer
+      </button>
+    </div>
+ <!-- Overlay -->
+    <div id="overlay" class="hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50">
+        <div class="bg-yellow-400 rounded-2xl shadow-2xl p-10 w-[600px] max-w-[90%] space-y-6 relative">
+
+
+    <!-- Close button -->
+    <button type="button" onclick="closeForm()" class="absolute top-6 right-6 text-gray-500 hover:text-black text-4xl">
+      &times;
+    </button>
+
+
+<!-- Participant Form -->
+  <form id="participant-form" class="class="bg-white text-black rounded-2xl p-10 w-[600px] space-y-6 shadow-2xl transform transition-all duration-300 scale-95"
+">
+    <h2 class="text-xl font-bold text-[#3f1a6f] mb-2">PARTICIPANT</h2>
+    
+    <div  class="flex items-center space-x-4">
+      <label class="block text-sm font-medium text-gray-700">Full Name</label>
+      <input type="text" placeholder="Enter your name" class="w-full px-3 py-2 border rounded-xl mt-1" required>
+    </div>
+    
+    <div  class="flex items-center space-x-4">
+      <label class="block text-sm font-medium text-gray-700">Registration Number</label>
+      <input type="text" placeholder="e.g. 21BCS1234" class="w-full px-3 py-2 border rounded-xl mt-1" required>
+    </div>
+    
+    <div class="flex items-center space-x-4">
+      <label class="block text-sm font-medium text-gray-700">College Email ID</label>
+      <input type="email" placeholder="name@vitbhopal.ac.in" class="w-full px-3 py-2 border rounded-xl mt-1" required>
+    </div>
+    
+    
+    <div class="flex justify-center mt-6">
+        <button type="submit" class="bg-pink-300 text-white px-6 py-2 rounded-full hover:bg-[#3f1a6f] transition">
+          Submit
+        </button>
+      </div>
+  </form>
+
+    <!-- Organizer Form -->
+  <form id="organizer-form" class="class="bg-white text-black rounded-2xl p-10 w-[600px] space-y-6 shadow-2xl transform transition-all duration-300 scale-95"
+">
+    <h2 class="text-xl font-bold text-[#3f1a6f] mb-2">ORGANIZER</h2>
+    
+    <div class="flex items-center space-x-6">
+      <label class="block text-sm font-medium text-gray-700">Club Name</label>
+      <input type="text" placeholder="e.g. Coding Club" class="w-full px-3 py-2 border rounded-xl mt-1" required>
+    </div>
+    
+    <div class="flex items-center space-x-6">
+      <label class="block text-sm font-medium text-gray-700">Event Coordinator Name</label>
+      <input type="text" placeholder="Coordinator full name" class="w-full px-3 py-2 border rounded-xl mt-1" required>
+    </div>
+    
+    <div class="flex items-center space-x-6">
+      <label class="block text-sm font-medium text-gray-700">Faculty Coordinator Name</label>
+      <input type="text" placeholder="Faculty full name" class="w-full px-3 py-2 border rounded-xl mt-1" required>
+    </div>
+    
+    <div class="flex items-center space-x-6">
+      <label class="block text-sm font-medium text-gray-700">Event Date</label>
+      <input type="date" class="w-full px-3 py-2 border rounded-xl mt-1" required>
+    </div>
+    
+   
+    <div class="flex justify-center mt-6">
+        <button type="submit" class="bg-pink-300 text-white px-6 py-2 rounded-full hover:bg-[#3f1a6f] transition">
+          Submit
+        </button>
+      </div>
+  </form>
+  </div>
+
+  <script>
+
+    function openForm(type) {
+      document.getElementById("overlay").classList.remove("hidden");
+      document.getElementById("participant-form").classList.add("hidden");
+      document.getElementById("organizer-form").classList.add("hidden");
+
+      const form = document.getElementById(type + "-form");
+      form.classList.remove("hidden");
+      form.classList.add("scale-100");
+    }
+
+    function closeForm() {
+      document.getElementById("overlay").classList.add("hidden");
+      document.getElementById("participant-form").classList.add("hidden");
+      document.getElementById("organizer-form").classList.add("hidden");
+    }
+  </script>
+  </div>
+
+</body>
+</html>

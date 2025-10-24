@@ -1,0 +1,609 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <link href="https://fonts.googleapis.com/css2?family=Slackey&display=swap" rel="stylesheet">
+  <link href="style.css" rel="stylesheet"/>
+  <title>
+   FestiVIT
+  </title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+<!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+  <style>
+   @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+   @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Comic+Neue:wght@700&display=swap');
+    /* Animation for ticker */
+    @keyframes tickerMove {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+    .ticker-wrapper {
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .ticker-content {
+      display: inline-flex;
+      animation: tickerMove 20s linear infinite;
+    }
+    .swiper-wrapper {
+      display: flex !important;   /* Ensure swiper works */
+    }
+
+    .swiper {
+      width: 100%;
+      padding: 20px 0;
+    }
+
+  .swiper-slide {
+    flex-shrink: 0 !important;  /* Prevent Tailwind from shrinking slides */
+  width: auto !important;     /* Allow Swiper JS to control width */
+    display: flex; /* ensure cards stay centered */
+    justify-content: center;
+
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+  color: #ff4a00; /* pink arrows */
+  font-weight: bold;
+  transform: scale(1.2); /* bigger arrows */
+}
+  .card{
+    background-color: #fff9df;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23e9d889' fill-opacity='0.4'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  @keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.blink-dot {
+  animation: blink 1s infinite;
+}
+
+/* Smooth transition for all */
+.hover-tilt-left, .hover-tilt-right, .hover-pop {
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+/* BOOK: tilt left */
+.hover-tilt-left:hover {
+  transform: rotate(-10deg) scale(1.05);
+}
+
+/* LEARN: tilt right */
+.hover-tilt-right:hover {
+  transform: rotate(10deg) scale(1.05);
+}
+
+/* VIBE: pop effect */
+@keyframes pop {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+}
+
+.hover-pop:hover {
+  animation: pop 0.4s ease forwards;
+  /* Also add a slight scale for immediate effect */
+  transform-origin: center;
+}
+
+  
+
+  </style>
+ </head>
+ <body class="bg-[#faf5f7] min-h-screen">
+  <div class="bg-[#a3b8ff] text-[#3e1f7a] text-sm font-semibold select-none">
+    <div class="ticker-wrapper">
+     <div class="ticker-content flex items-center space-x-2 px-4 py-1 min-w-max">
+      <span>
+       EVENTS: FOR YOU, BY YOU
+      </span>
+      <svg class="w-4 h-4 text-[#ff4d4d]" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+       <path d="M12 4v16m8-8H4" stroke-linecap="round" stroke-linejoin="round">
+       </path>
+      </svg>
+      <span>
+       EVENTS: FOR YOU, BY YOU
+      </span>
+      <svg class="w-4 h-4 text-[#ff4d4d]" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+       <path d="M12 4v16m8-8H4" stroke-linecap="round" stroke-linejoin="round">
+       </path>
+      </svg>
+      <span>
+       3 DAYS TO GO FOR ADVITYA 2025!
+      </span>
+      <svg class="w-4 h-4 text-[#ff4d4d]" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+       <path d="M12 4v16m8-8H4" stroke-linecap="round" stroke-linejoin="round">
+       </path>
+      </svg>
+      <span>
+       REGISTER NOW FOR WORKSHOPS!
+      </span>
+      <!-- Repeat again for seamless loop -->
+      <svg class="w-4 h-4 text-[#ff4d4d]" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+       <path d="M12 4v16m8-8H4" stroke-linecap="round" stroke-linejoin="round">
+       </path>
+      </svg>
+      <span>
+       FUN ACTIVITIES AWAIT!
+      </span>
+      <svg class="w-4 h-4 text-[#ff4d4d]" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+       <path d="M12 4v16m8-8H4" stroke-linecap="round" stroke-linejoin="round">
+       </path>
+      </svg>
+      <span>
+       EARLY BIRD DISCOUNTS AVAILABLE!
+      </span>
+      <svg class="w-4 h-4 text-[#ff4d4d]" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+       <path d="M12 4v16m8-8H4" stroke-linecap="round" stroke-linejoin="round">
+       </path>
+      </svg>
+      <span>
+       TICKETS SELLING FAST!
+      </span>
+      <svg class="w-4 h-4 text-[#ff4d4d]" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+       <path d="M12 4v16m8-8H4" stroke-linecap="round" stroke-linejoin="round">
+       </path>
+      </svg>
+      <span>
+       EVENTS: FOR YOU, BY YOU
+      </span>
+     </div>
+    </div>
+   </div>
+  <div class="max-w-[1200px] mx-auto px-4 pt-4">
+<!-- Top nav -->
+<nav class="flex flex-wrap justify-between text-[10px] sm:text-xs font-sans text-[#1a1a1a] mb-2">
+  <div class="flex space-x-4 sm:space-x-8 w-full sm:w-auto mb-2 sm:mb-0">
+    <!-- Left: Dynamic Current Date -->
+    <div id="current-date" class="font-semibold"></div>
+
+    <!-- Center: Dynamic Countdown -->
+    <div id="countdown" class="font-bold"></div>
+  </div>
+
+  <!-- Right Section removed as per request -->
+
+  <!-- Navigation Links -->
+  <div class="flex space-x-4 sm:space-x-8 items-center w-full sm:w-auto justify-between sm:justify-start">
+    <a class="uppercase text-[10px] sm:text-xs font-semibold tracking-wide text-[#1a1a1a] hover:underline" href="events.html">
+      WHAT'S NEW
+    </a>
+    <a class="uppercase text-[10px] sm:text-xs font-semibold tracking-wide text-[#1a1a1a] hover:underline" href="signup.html">
+      SIGN UP
+    </a>
+    <button id="search-btn" class="bg-pink-400 rounded-full px-4 sm:px-6 py-2 sm:py-2 text-white hover:bg-pink-300 transition flex items-center justify-center">
+    <i class="fas fa-search"></i>
+    </button>
+    <div id="search-bar" class="fixed top-0 left-0 w-full h-full bg-black/50 flex justify-center items-start pt-20 hidden z-50">
+      <div class="bg-white rounded-full w-[90%] sm:w-[500px] flex items-center px-4 py-2 shadow-lg">
+        <input type="text" placeholder="Search events..." class="flex-1 outline-none px-2 py-1 text-sm sm:text-base">
+        <button id="close-search" class="text-gray-600 hover:text-black ml-2">
+        <i class="fas fa-times"></i>
+        </button>
+    </div>
+  </div>
+  </div>
+</nav>
+<script>
+  const searchBtn = document.getElementById('search-btn');
+  const searchBar = document.getElementById('search-bar');
+  const closeSearch = document.getElementById('close-search');
+
+  searchBtn.addEventListener('click', () => {
+    searchBar.classList.remove('hidden');
+  });
+
+  closeSearch.addEventListener('click', () => {
+    searchBar.classList.add('hidden');
+  });
+
+  // Optional: close search on clicking outside
+  searchBar.addEventListener('click', (e) => {
+    if(e.target === searchBar){
+      searchBar.classList.add('hidden');
+    }
+  });
+</script>
+
+<script>
+  // Dynamic Current Date
+  function updateDate() {
+    const dateElement = document.getElementById("current-date");
+    const today = new Date();
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    dateElement.textContent = today.toLocaleDateString('en-US', options);
+  }
+  updateDate();
+</script>
+
+   <!-- FESTIVIT text with informal bold font -->
+   <h1 class="font-slackey text-[140px] sm:text-[250px] leading-[1] text-[#3f1a6f] select-none max-w-full truncate">
+  festiVIT
+  </h1>
+
+  </div>
+  <div class="relative bg-pink-300 pt-6 pb-24 px-4 sm:px-8">
+  <div class="max-w-[1200px] mx-auto flex flex-col sm:flex-row sm:justify-start sm:items-start gap-6 sm:gap-8 relative">
+    
+    <!-- Left side text block (fixed width) -->
+    <div class="max-w-[320px] flex flex-col space-y-1 sm:space-y-0 order-1 flex-shrink-0">
+      <div class="inline-block bg-[#a3c94d] rounded-md px-1.5 py-0.5 text-[22px] sm:text-[45px] font-bold font-['Fredoka_One'] text-[#2f3e6a] leading-none select-none whitespace-nowrap w-max rotate-3 origin-left hover-tilt-left cursor-pointer">
+        BOOK
+      </div>
+      <div class="inline-block bg-[#ff4a00] rounded-md px-2 py-0.5 text-[24px] sm:text-[55px] font-bold font-['Fredoka_One'] text-[#ffed00] leading-none select-none -mt-1 whitespace-nowrap w-max mb-[-6px] hover-pop cursor-pointer">
+        VIBE
+      </div>
+      <div class="inline-block bg-[#d68ffb] rounded-md px-2 py-0.5 text-[24px] sm:text-[50px] font-bold font-['Fredoka_One'] text-[#3f1a6f] leading-none select-none -mt-6 whitespace-nowrap w-max -rotate-6 origin-left hover-tilt-right cursor-pointer">
+        LEARN
+      </div>
+      <div class="text-[10px] sm:text-[10px] font-extrabold font-sans text-[#3f1a6f] mt-1 sm:mt-2 select-none tracking-widest" style="">
+        WHAT ARE YOU WAITING FOR!?
+      </div>
+      <!-- Image below text, reduced width and tilted opposite direction -->
+      <div class="mt-6 w-[280px] sm:w-[320px] rounded-[160px_160px_0_0] overflow-hidden rotate-6 origin-bottom-left">
+        <img alt="Top view of plates with food on a bright red table with hands using chopsticks" class="w-full h-auto object-cover" height="550" src="images/Untitled_design__9_-removebg-preview.png" style="border-radius: 160px 160px 0 0;" width="520"/>
+      </div>
+    </div>
+
+    <!-- Middle new images container (fixed width, horizontal images) -->
+    <div class="relative flex gap-6 justify-center items-center w-[600px] order-2 flex-shrink-0">
+      <!-- First new image -->
+      <div class=" overflow-hidden rotate-12 origin-bottom-left  w-[500px] h-[500px]">
+        <img alt="New Image 1" src="images/Untitled_design__10_-removebg-preview.png" class="w-full h-full object-cover">
+      </div>
+      <!-- Second new image overlapping the first slightly -->
+      <div class="overflow-hidden -rotate-12 origin-bottom-right w-[100px] h-[140px] -ml-20 z-10">
+        <img alt="New Image 2" src="images/download__44_-removebg-preview.png" class="w-full h-full object-cover"> 
+      </div>
+    </div>
+
+    <!-- Right image moved down and tilted left -->
+    <div class="flex-shrink-0 relative w-[400px] sm:w-[320px] rounded-[160px_160px_0_0] overflow-hidden order-3 translate-y-6 -rotate-6 origin-bottom-right">
+      <img alt="Two hands holding colorful drinks splashing with blue sky background" class="w-full h-auto object-cover" height="400" src="images//Untitled_design__11_-removebg-preview.png" style="border-radius: 160px 160px 0 0;" width="320"/>
+    </div>
+        <div class="flex-shrink-0 relative w-[600px] sm:w-[520px] rounded-[160px_160px_0_0] overflow-hidden order-3 translate-y-6 -rotate-6 origin-bottom-right">
+      <img alt="Two hands holding colorful drinks splashing with blue sky background" class="w-full h-auto object-cover" height="400" src="images//Untitled_design__11_-removebg-preview.png" style="border-radius: 160px 160px 0 0;" width="320"/>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Section 1: Vibe -->
+<section class="bg-[#faf5f7] py-12">
+  <div class="max-w-[1200px] mx-auto px-4 sm:px-8">
+    <div class="flex justify-center">
+  <div class=""inline-block> 
+  <div class="inline-block bg-[#ff4a00] rounded-md px-2 py-0.5 text-[26px] sm:text-[65px] font-bold font-['Fredoka_One'] text-[#ffed00] leading-none select-none whitespace-nowrap w-max rotate-5 mb-20">
+    VIBE
+  </div>
+  
+  <div class="inline-block bg-[#a3c94d] rounded-md px-1.5 py-0.5 text-[24px] sm:text-[55px] font-bold font-['Fredoka_One'] text-[#2f3e6a] leading-none select-none whitespace-nowrap w-max rotate-3 origin-left hover-tilt-left mb-20">
+        HERE
+      </div>
+    <img src="images/download__44_-removebg-preview.png" alt="Tagline Icon" class="w-20 h-100 object-contain items-center" />
+    <div class=" px-2 py-1 rounded select-none text-[#3f1a6f] font-semibold text-base flex items-center gap-2 sm:text-xl mt-17 ml-2 w-max">
+    <span>Check out below what you missed! </span>
+    </div>
+  </div>
+</div>
+
+
+    <!-- Swiper Container -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+
+        <!-- Card 1 -->
+        <div class="swiper-slide">
+          <div class="card text-center  rounded-xl shadow-lg p-6 flex justify-center items-center flex flex-col hover:scale-105 transition-transform duration-300 w-100 h-[600px]">
+            <h3 class="text-xl font-['Fredoka_One'] text-[#3f1a6f] mb-2">KABIR CAFE LIVE</h3>
+            <img src="images/images3.jpg" alt="Event 1" class="rounded-lg mb-4 h-64 object-cover hover:opacity-90 transition">
+            
+            <img src="images/download__40_-removebg-preview.png" alt="stamp" class="absolute bottom-60 right-2 w-28 rotate-6 opacity-100">
+            <img src="images/download__40_-removebg-preview.png" alt="stamp" class="absolute top-2 left-2 w-28 rotate-6 opacity-80">
+            
+            
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="swiper-slide">
+          <div class="card text-center rounded-xl shadow-lg p-6 flex justify-center items-center flex-col hover:scale-105 transition-transform duration-300 w-100 h-[600px]">
+            <h3 class="text-xl font-['Fredoka_One'] text-[#3f1a6f] mb-2">RANG-e-RAS</h3>
+            <img src="images/images1.jpg" alt="Event 2" class="rounded-lg mb-4 h-64 object-cover hover:opacity-90 transition">
+            
+            <img src="images/download__39_-removebg-preview.png" alt="stamp" class="absolute bottom-40 right-1 w-20 rotate-6 opacity-100">
+            <img src="images/Bam_bam-removebg-preview.png" alt="stamp" class="absolute top-[230px] left-2 w-[135px] rotate-6 opacity-100">
+            <img src="images/download__39_-removebg-preview.png" alt="stamp" class="absolute bottom-40 right-5 w-20 rotate-6 opacity-100">
+            <img src="images/download__39_-removebg-preview.png" alt="stamp" class="absolute bottom-40 right-10 w-20 rotate-6 opacity-100">           
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="swiper-slide">
+          <div class="card text-center rounded-xl shadow-lg p-6 flex justify-center items-center flex-col hover:scale-105 transition-transform duration-300 w-100 h-[600px]">
+           <h3 class="text-xl font-['Fredoka_One'] text-[#3f1a6f] mb-2">SUNIDHI CHAUHAN IN THE HOUSE</h3>
+            <img src="images/Screenshot 2025-09-07 122944.png" alt="Event 3" class="rounded-lg mb-4 h-64 object-cover hover:opacity-90 transition">
+            
+            <img src="images/download__42_-removebg-preview.png" alt="stamp" class="absolute top-[80px] right-2 w-20 rotate-6 opacity-80">
+            <img src="images/download__41_-removebg-preview.png" alt="stamp" class="absolute bottom-40 left-[100px] w-20 rotate-6 opacity-100">
+            <img src="images/download__41_-removebg-preview.png" alt="stamp" class="absolute bottom-40 left-10 w-20 rotate-6 opacity-100">
+          </div>
+        </div>
+
+        <!-- Add more cards here -->
+          <!-- Card 4 -->
+        <div class="swiper-slide">
+          <div class="card text-center rounded-xl shadow-lg p-6 flex justify-center items-center flex-col hover:scale-105 transition-transform duration-300 w-100 h-[600px]">
+            <h3 class="text-xl font-['Fredoka_One'] text-[#3f1a6f] mb-2">GLAM VIT</h3>
+            <img src="images/Screenshot 2025-09-08 001012.png" alt="Event 3" class="rounded-lg mb-4 h-64 object-cover hover:opacity-90 transition">
+                    
+            <img src="images/download__38_-removebg-preview.png" alt="stamp" class="absolute top-2 left-2 w-20 rotate-6 opacity-100">
+            
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Navigation buttons -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+
+      <!-- Pagination dots -->
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+  <div class="flex justify-center mt-8">
+    <button class="bg-[#ff4a00] hover:bg-yellow-300 text-white font-bold py-3 px-8 rounded-xl shadow-md transition-transform transform hover:scale-105">
+      JOIN IN
+    </button>
+  </div>
+</section>
+<script>
+  var swiper = new Swiper(".mySwiper", {
+  slidesPerView: 3,
+  spaceBetween: 30,
+  loop: true,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
+  breakpoints: {
+    0: { slidesPerView: 1 },
+    768: { slidesPerView: 2 },
+    1024: { slidesPerView: 3 }
+  }
+});
+
+</script>
+
+<!-- SECTION 2 -->
+<!-- <section class="bg-[#faf5f7] py-12">
+  <div class="max-w-[1200px] mx-auto px-4 sm:px-8">
+    <div class="flex justify-center">
+<div class="inline-block bg-[#d68ffb] rounded-md px-2 py-0.5 text-[24px] sm:text-[50px] font-bold font-['Fredoka_One'] text-[#3f1a6f] leading-none select-none -mt-6 whitespace-nowrap w-max -rotate-6 origin-left">
+      LEARN
+     </div>
+<div class="bg-white rounded-lg shadow-md p-4 hover:scale-105 transition-transform">
+  <img src="images/tech-event1.jpg" alt="Tech Event 1" class="rounded-md mb-2">
+  <h3 class="font-bold text-[#3f1a6f] text-lg mb-1">Hackathon 2025</h3>
+  <p class="text-gray-600 text-sm mb-2">Campus-wide coding challenge with prizes.</p>
+  <p class="text-gray-500 text-xs mb-2">Date: July 20, Venue: Lab 5</p>
+  <button class="bg-pink-400 text-white px-4 py-2 rounded-full hover:bg-pink-300 transition">
+    Register
+  </button>
+</div>
+<hr class="border-t-4 border-dotted border-pink-300 my-16"> -->
+
+<!-- SECTION 2: LEARN -->
+
+<section class="learn bg-[#3f1a6f] py-12">
+  <hr class="border-t-4 border-dotted border-[#3f1a6f] my-16">
+  <div class="max-w-[1200px] mx-auto px-4 sm:px-8">
+    <div class="flex flex-col lg:flex-row items-start gap-8">
+      
+      <!-- Left side - LEARN heading and description -->
+      <div class="flex flex-col items-start lg:w-1/3 lg:sticky lg:top-8 lg:self-start">
+        <div class="inline-block bg-[#d68ffb] rounded-md px-2 py-0.5 text-[24px] sm:text-[50px] font-bold font-['Fredoka_One'] text-[#3f1a6f] leading-none select-none whitespace-nowrap w-max -rotate-6 origin-left mb-6">
+          LEARN
+          <i class="fas fa-lightbulb absolute -top-5 -right-9 text-[#ffed00] text-2xl sm:text-6xl rotate-12 drop-shadow-lg"></i>
+
+        </div>
+        <div class="text-[12px] sm:text-[14px] font-extrabold font-sans text-white mt-4 select-none tracking-wide">
+          DIVE INTO THE WORLD OF TECHNOLOGY!<br>
+          WORKSHOPS • HACKATHONS • COMPETITIONS
+        </div>
+
+         <!-- Section Divider -->
+        <div class="w-full h-[2px] bg-gradient-to-r from-transparent via-[#d68ffb] to-transparent my-8 opacity-60 mt-20"></div>
+        
+        <!-- BOOK Section -->
+        <div class="inline-block bg-[#a3c94d] rounded-md px-2 py-0.5 text-[24px] sm:text-[50px] font-bold font-['Fredoka_One'] text-[#2f3e6a] leading-none select-none whitespace-nowrap w-max rotate-3 origin-left mb-6 mt-16 relative">
+          BOOK
+          <!-- Ticket icon -->
+          <i class="fas fa-ticket-alt absolute -top-4 -right-8 text-[#ff4a00] text-2xl sm:text-4xl -rotate-12 drop-shadow-lg"></i>
+        </div> 
+        <div class="text-[12px] sm:text-[14px] font-extrabold font-sans text-white mt-4 select-none tracking-wide">
+          <i class="fas fa-clock text-lg mr-2 text-[#ff4a00]"></i>EARLY BIRD PASSES<br>
+          <i class="fas fa-lock text-lg mr-2 text-[#a3c94d]"></i>SECURE YOUR SPOT
+        </div>
+        <h2 class="text-[#ffed00] font-extrabold mt-2 text-2xl">LIMITED SEATS!!!!</h2>
+      </div>
+
+      <!-- Right side - Tech Events Cards -->
+      <div class="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <!-- Tech Event Card 1 -->
+        <div class="card_1 bg-white rounded-xl shadow-lg p-6 hover:scale-105 transition-transform duration-300 relative overflow-hidden">
+          <div class="flex items-center justify-between mb-2">
+            
+            <span class="bg-red-500 text-white px-1 py-1 rounded-full text-xs font-bold flex items-center gap-1 animate-pulse">
+            <span class="bg-red-500 text-white px-1 py-1 rounded-full text-xs font-bold flex items-center gap-1">
+            <span class="w-2 h-2 text-xs bg-white rounded-full blink-dot"></span>
+            LIVE
+          </span>
+          </div>
+          <img src="images/Screenshot 2025-09-08 120739.png" alt="Hackathon 2025" class="w-full h-48 object-cover rounded-lg mb-4 hover:opacity-90 transition">
+          <h3 class="text-xl font-['Fredoka_One'] text-[#3f1a6f] mb-2">HACKATHON 2025</h3>
+          <p class="text-gray-600 text-sm mb-3">48-hour coding marathon with industry mentors and amazing prizes</p>
+          <div class="flex items-center justify-between">
+            <span class="text-purple-600 font-bold text-sm">Coding Competition</span>
+            <a href="signup.html" class="bg-[#ff4a00] hover:bg-yellow-300 text-white px-4 py-2 rounded-full text-sm font-bold transition-all transform hover:scale-105 inline-block text-center">
+            Register Now
+            </a>
+          </div>
+          <!-- Decorative stamps -->
+        </div>
+
+        <!-- Tech Event Card 2 -->
+        <div class="card_1 bg-white rounded-xl shadow-lg p-6 hover:scale-105 transition-transform duration-300 relative overflow-hidden">
+          <div class="flex items-center justify-between mb-2">
+            <span class="bg-[#3f1a6f] text-yellow-300 px-3 py-1 rounded-full text-xs font-bold">★ FEATURED</span>
+            
+          </div>
+          <img src="images/Screenshot 2025-09-08 120903.png" alt="AI Workshop" class="w-full h-48 object-cover rounded-lg mb-4 hover:opacity-90 transition">
+          <h3 class="text-xl font-['Fredoka_One'] text-[#3f1a6f] mb-2">AI WORKSHOP</h3>
+          <p class="text-gray-600 text-sm mb-3">Learn machine learning fundamentals with hands-on projects</p>
+          <div class="flex items-center justify-between">
+            <span class="text-purple-600 font-bold text-sm">Machine Learning</span>
+            <button class="bg-[#ff4a00] hover:bg-yellow-300 text-white px-4 py-2 rounded-full text-sm font-bold transition-all transform hover:scale-105">
+              Check Insights
+            </button>
+          </div>
+          <!-- Decorative stamps -->
+        </div>
+
+        <!-- Tech Event Card 3 -->
+        <div class="card_1 bg-white rounded-xl shadow-lg p-6 hover:scale-105 transition-transform duration-300 relative overflow-hidden">
+          <div class="flex items-center justify-between mb-2">
+             <span class="bg-red-500 text-white px-1 py-1 rounded-full text-xs font-bold flex items-center gap-1 animate-pulse">
+            <span class="bg-red-500 text-white px-1 py-1 rounded-full text-xs font-bold flex items-center gap-1">
+            <span class="w-2 h-2 text-xs bg-white rounded-full blink-dot"></span>
+            LIVE
+          </span>
+          </div>
+          <img src="images/Screenshot 2025-09-08 120933.png" alt="Web Dev Bootcamp" class="w-full h-48 object-cover rounded-lg mb-4 hover:opacity-90 transition">
+          <h3 class="text-xl font-['Fredoka_One'] text-[#3f1a6f] mb-2">WEB DEV BOOTCAMP</h3>
+          <p class="text-gray-600 text-sm mb-3">Full-stack development intensive with real-world projects</p>
+          <div class="flex items-center justify-between">
+            <span class="text-purple-600 font-bold text-sm">Web Development</span>
+            <a href="signup.html" class="bg-[#ff4a00] hover:bg-yellow-300 text-white px-4 py-2 rounded-full text-sm font-bold transition-all transform hover:scale-105 inline-block text-center">
+            Register Now
+          </a>
+          </div>
+          <!-- Decorative stamps -->
+        </div>
+
+        <!-- Tech Event Card 4 -->
+        <div class="card_1 bg-white rounded-xl shadow-lg p-6 hover:scale-105 transition-transform duration-300 relative overflow-hidden">
+          <div class="flex items-center justify-between mb-2">
+            <span class="bg-[#3f1a6f] text-yellow-300 px-3 py-1 rounded-full text-xs font-bold">★ FEATURED</span>
+          </div>
+          <img src="images/Screenshot 2025-09-08 121348.png" alt="Robotics Competition" class="w-full h-48 object-cover rounded-lg mb-4 hover:opacity-90 transition">
+          <h3 class="text-xl font-['Fredoka_One'] text-[#3f1a6f] mb-2">ROBOTICS ARENA</h3>
+          <p class="text-gray-600 text-sm mb-3">Build and compete with autonomous robots in challenging tasks</p>
+          <div class="flex items-center justify-between">
+            <span class="text-purple-600 font-bold text-sm">Robotics</span>
+            <button class="bg-[#ff4a00] hover:bg-yellow-300 text-white px-4 py-2 rounded-full text-sm font-bold transition-all transform hover:scale-105">
+              Check Insights
+            </button>
+          </div>
+          <!-- Decorative stamps -->
+        </div>
+
+      </div>
+    </div>
+    
+    <!-- Call to action button -->
+    <div class="flex justify-center mt-8">
+      <a href="techevents.html" class="bg-[#a3c94d] hover:bg- text-[#3f1a6f] font-bold py-3 px-8 rounded-xl shadow-md transition-transform transform hover:scale-105 inline-block text-center">
+  EXPLORE ALL TECH EVENTS
+</a>
+    </div>
+  </div>
+</section>
+<!-- SECTION 3
+<section class="bg-[#faf5f7] py-12">
+  <div class="max-w-[1200px] mx-auto px-4 sm:px-8">
+    <div class="flex justify-center">
+<section class="bg-pink-300 text-white py-12 px-4 sm:px-8">
+  <div class="max-w-[1200px] mx-auto text-center">
+    <h2 class="font-bold text-4xl mb-4">About festiVIT</h2>
+    <p class="text-lg mb-6">FestiVIT is the biggest cultural and tech festival at VIT, featuring non-tech, tech events, workshops, and competitions.</p>
+    <a href="events.html" class="bg-white text-pink-400 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition">
+      Book Your Spot
+    </a>
+  </div>
+</section> -->
+
+<!-- SECTION 3 - Footer -->
+<section class="bg-pink-300 text-white py-12 px-4 sm:px-8">
+  <div class="max-w-[1200px] mx-auto">
+    <!-- Main content -->
+    <!-- <div class="text-center mb-16">
+      <h2 class="font-bold text-4xl mb-4 text-[#3f1a6f]">About festiVIT</h2>
+      <p class="text-lg mb-6 text-[#3f1a6f]">FestiVIT is the biggest cultural and tech festival at VIT, featuring non-tech, tech events, workshops, and competitions.</p>
+      <a href="events.html" class="bg-white text-pink-400 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition">
+        Book Your Spot
+      </a>
+    </div> -->
+
+    <!-- Footer -->
+    <div class="relative">
+      <!-- Top section with contact info -->
+      <div class="flex justify-between items-start mb-8">
+        <!-- Left side - Email and Apply link -->
+        <div class="flex flex-col space-y-4">
+          <div class="flex items-center space-x-2">
+            <i class="fas fa-envelope text-[#3f1a6f] text-lg"></i>
+            <span class="text-[#3f1a6f] font-semibold text-2xl">contact@festivit.com</span>
+          </div>
+          <div>
+            <a href="about.html" class="text-[#3f1a6f] font-bold text-2xl underline hover:text-white transition">
+              Apply to be a festiVIAN
+            </a>
+          </div>
+        </div>
+
+        <!-- Right side - Instagram -->
+        <div class="flex items-center space-x-2">
+          <i class="fab fa-instagram text-[#3f1a6f] right-5 text-2xl"></i>
+          <span class="text-[#3f1a6f] font-semibold text-2xl">@festivit</span>
+        </div>
+      </div>
+
+      <!-- FestiVIT title -->
+      <div class="text-center">
+        <h1 class="font-slackey text-[100px] sm:text-[180px] leading-[1] text-[#3f1a6f] select-none">
+          festiVIT
+        </h1>
+      </div>
+    </div>
+  </div>
+</section>
+ </body>
+</html>
