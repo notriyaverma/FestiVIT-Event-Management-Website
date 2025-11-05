@@ -1,0 +1,24 @@
+{
+  "name": "festivit-event-management-website",
+  "version": "1.0.0",
+  "description": "FestiVIT is a responsive web platform designed to manage and book cultural and technical events at the university level.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/notriyaverma/FestiVIT-Event-Management-Website.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/notriyaverma/FestiVIT-Event-Management-Website/issues"
+  },
+  "homepage": "https://github.com/notriyaverma/FestiVIT-Event-Management-Website#readme"
+}
