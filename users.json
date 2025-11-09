@@ -1,0 +1,16 @@
+[
+  {
+    "role": "participant",
+    "name": "riya verma",
+    "regNo": "22BCE11481",
+    "email": "riyaverma@vitbhopal.ac.in",
+    "phone": "9717654219"
+  },
+  {
+    "role": "organizer",
+    "club": "coding club",
+    "coordinator": "bhumika choksi",
+    "faculty": "riya verma",
+    "date": "2003-02-19"
+  }
+]
